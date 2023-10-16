@@ -44,13 +44,20 @@
         </form>
         <h1>Receitas</h1>
         {% for receita in receitas %}
-            <h2 class="titulo_receita">{{ receita.titulo }}</h2>
-            <h4 class="id_usuario">{{ receita.userid }}</h4>
-            
-            <p class="tags_receita">Tags: {{ receita.tags }}</p>
-            
-            <p class="texto_receita">{{ receita.conteudo }}</p>
+            <div class="receita">
+                <h2 class="titulo_receita">{{ receita.titulo }}</h2>
+                <h4 class="id_usuario">{{ receita.userid }}</h4>
+                
+                <p class="tags_receita">Tags:
+                {% for tag in receita.tags %}
+                    {{ tag }}
+                {% endfor %}
+                </p>
+                
+                <p class="texto_receita" style="word-wrap: break-word;">{{ receita.conteudo }}</p>
+            </div>
         {% endfor %}
+
         <button onclick="window.location.href='/cadreceitas'">Cadastrar Receita</button>
     </section>
 </body>

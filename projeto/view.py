@@ -55,11 +55,14 @@ def cadreceitas():
     if request.method == 'POST':
         # Obtenha os dados do formulário de cadastro de notas de alunos
         titulo = request.form['titulo']
-        tags = request.form['tags']
+        tags = request.form['tags'].split(',')  # Separe as tags usando vírgula (ou outro delimitador)
+
         conteudo = request.form['conteudo_receita']
+
         # Certifique-se de associar a nota ao aluno que a está recebendo
         # Substitua 'user_id' pelo ID do usuário autenticado
         user_id = 'user_id'  # Substitua pelo ID do usuário autenticado
+
         new_receita = Receita(userid=user_id, titulo=titulo, tags=tags, conteudo=conteudo)
         mongo.db.receitas.insert_one(new_receita.__dict__)
 
