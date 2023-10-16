@@ -1,9 +1,8 @@
-/* Estilo para centralizar a seção de receitas */
+/* Estilo para centralizar o Login */
 #mainpage {
     max-width: 600px;
     margin: 0 auto;
     background-color: #fff8e7;
-    padding: 20px;
 }
 
 /* Estilo para o corpo da página */
@@ -28,22 +27,33 @@ body {
     margin-right: 20px;
 }
 
-/* Estilo para os títulos das receitas */
-.titulo_receita {
-    color: #f77998;
+/* Estilo para os campos de entrada */
+.input_field {
+    margin-bottom: 15px;
 }
 
-/* Estilo para os IDs dos usuários */
-.id_usuario {
-    color: #655242;
+label {
+    color: #f77998; /* Rosa médio */
 }
 
-/* Estilo para o texto das receitas */
-.texto_receita {
-    color: #655242;
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
 }
 
-/* Estilo para o botão de cadastrar receita */
+/* Estilo para o botão de entrar */
+button[type="submit"] {
+    background-color: #7e6651;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilo para o botão de cadastro */
 button {
     background-color: #7e6651;
     color: white;
@@ -54,7 +64,8 @@ button {
     border-radius: 5px;
 }
 
-/* Estilo de hover para o botão */
+/* Estilo de hover */
+button[type="submit"]:hover,
 button:hover {
     background-color: #bc9b7d; /* Altera a cor de fundo ao passar o mouse sobre o botão */
 }
