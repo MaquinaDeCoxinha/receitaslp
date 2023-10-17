@@ -73,18 +73,31 @@ def cadreceitas():
 @app.route('/home', methods=['GET', 'POST'])
 def home():
     app.logger.info('Solicitação recebida na rota /home')
-    
-    # Obtenha o filtro de tag da URL
-    selected_tag = request.args.get('tag', default='', type=str)
-    
-    # Consulta no banco de dados
-    query = {}
-    if selected_tag:
-        query['tags'] = {'$regex': selected_tag, '$options': 'i'}
-    
-    receitas = mongo.db.receitas.find(query)
-    
+
     # Obtenha uma lista de todas as tags disponíveis no banco de dados
     all_tags = [receita['tags'] for receita in mongo.db.receitas.find()]
-    
-    return render_template('home.html', receitas=receitas, selected_tag=selected_tag, all_tags=all_tags)
+
+    # Obtenha o filtro de tag da URL
+    selected_tags = request.args.getlist('tag')
+
+    app.logger.info(f'selected_tags recebida: {selected_tags}')
+
+    # Consulta no banco de dados
+    query = {}
+    if selected_tags:
+        query['tags'] = {'$all': selected_tags}
+
+    app.logger.info(f'Query MongoDB: {query}')
+
+    receitas = []
+    cursor = mongo.db.receitas.find(query)
+    for receita in cursor:
+        receitas.append(receita)
+        app.logger.info(receita)
+
+
+    # Se nenhuma tag estiver selecionada -> mostre todas as tags
+    if (not selected_tags) or (selected_tags == ['Todas as Tags']):
+        selected_tags = all_tags
+
+    return render_template('home.html', receitas=receitas, selected_tags=selected_tags, all_tags=all_tags)

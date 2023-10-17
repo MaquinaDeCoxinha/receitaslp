@@ -30,18 +30,18 @@
     <section id="mainpage">
         <form method="GET" action="/home">
             <div>
-                <label for="tag">Filtrar por Tag:</label>
-                <select name="tag">
-                    <option value="">Todas as Tags</option>
-                    {% for tag in all_tags %}
-                        <option value="{{ tag }}" {% if tag == selected_tag %}selected{% endif %}>{{ tag }}</option>
+            <label for="tag">Filtrar por Tag:</label>
+                <option value="">Todas as Tags</option>
+                {% for receita in receitas %}
+                    {% for tag in receita.tags %}
+                        <input type='checkbox' name='tag' value="{{ tag }}" {% if tag in selected_tags %}selected{% endif %}>{{ tag }}</input><br>
                     {% endfor %}
-                </select>
+                {% endfor %}
             </div>
             <div>
                 <button type="submit">Filtrar</button>
             </div>
-        </form>
+        </form>        
         <h1>Receitas</h1>
         {% for receita in receitas %}
             <div class="receita">
