@@ -1,0 +1,81 @@
+/* Estilo para centralizar o Login */
+#mainpage {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff8e7;
+}
+
+/* Estilo para o corpo da página */
+body {
+    background-color: #fff8e7;
+    font-family: Arial, sans-serif;
+    color: #655242;
+}
+
+/* Estilo para a barra de navegação */
+#nav-bar {
+    background-color: #ff8daa;
+    padding: 5px;
+}
+
+#nav-list {
+    list-style-type: none;
+}
+
+#nav-list li {
+    display: inline;
+    margin-right: 20px;
+}
+
+/* Estilo para os campos de entrada */
+.input_field {
+    margin-bottom: 15px;
+}
+
+label {
+    color: #f77998; /* Rosa médio */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilo para o botão de entrar */
+button[type="submit"] {
+    background-color: #7e6651;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilo para o botão de cadastro */
+button {
+    background-color: #7e6651;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+/* Estilo de hover */
+button[type="submit"]:hover,
+button:hover {
+    background-color: #bc9b7d; /* Altera a cor de fundo ao passar o mouse sobre o botão */
+}
+
+/* Estilo para links */
+a {
+    color: #fff8e7;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; /* Sublinha o link ao passar o mouse sobre ele */
+}

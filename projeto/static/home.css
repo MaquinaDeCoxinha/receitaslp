@@ -1,0 +1,105 @@
+/* Estilo para centralizar a seção de receitas */
+#mainpage {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff8e7;
+    padding: 20px;
+}
+
+/* Estilo para o corpo da página */
+body {
+    background-color: #fff8e7;
+    font-family: Arial, sans-serif;
+    color: #655242;
+}
+
+/* Estilo para a barra de navegação */
+#nav-bar {
+    background-color: #ff8daa;
+    padding: 5px;
+}
+
+#nav-list {
+    list-style-type: none;
+}
+
+#nav-list li {
+    display: inline;
+    margin-right: 20px;
+}
+
+/* Estilo para os títulos das receitas */
+.titulo-receita {
+    font-weight: bold;
+    color: #f77998;
+}
+
+/* Estilo para os IDs dos usuários */
+.id-usuario {
+    color: #655242;
+}
+
+/* Estilo para o texto das receitas */
+.texto-receita {
+    color: #655242;
+}
+
+/* Estilo para o botão de cadastrar receita */
+button {
+    background-color: #7e6651;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+/* Estilo de hover para o botão */
+button:hover {
+    background-color: #bc9b7d;
+}
+
+/* Estilo para links */
+a {
+    color: #fff8e7;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para cada receita */
+.receita {
+    padding: 20px;
+    margin: 10px 0; /* Adicione margem na parte superior e inferior para separação vertical */
+    border: 1px solid #ccc;
+}
+
+/* Estilo para cores de fundo diferentes */
+.receita:nth-child(odd) {
+    background-color: #f0f0f0; /* Cor de fundo para receitas ímpares */
+}
+
+.receita:nth-child(even) {
+    background-color: #e0e0e0; /* Cor de fundo para receitas pares */
+}
+
+/* Estilo para o título da receita */
+.titulo_receita {
+    font-size: 20px; /* Tamanho da fonte do título */
+    font-weight: bold; /* Texto em negrito */
+    margin: 0 0 10px; /* Adicione margem na parte inferior do título */
+}
+
+/* Estilo para as tags da receita */
+.tags_receita {
+    font-style: italic; /* Texto em itálico */
+    margin: 0 0 10px; /* Adicione margem na parte inferior das tags */
+}
+
+/* Estilo para o conteúdo da receita */
+.texto_receita {
+    word-wrap: break-word; /* Quebra de palavras */
+}
